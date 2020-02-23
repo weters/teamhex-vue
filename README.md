@@ -1,5 +1,7 @@
 # teamhex-vue
 
+This is the web front-end for [TeamHex](https://teamhex.dev/). This application requires the [TeamHex RESTful API](https://github.com/weters/teamhex).
+
 ## Project setup
 ```
 npm install
@@ -9,6 +11,8 @@ npm install
 ```
 npm run serve
 ```
+
+In development, it looks for the REST API at [http://localhost:5000](http://localhost:5000). You can configure this by setting the `VUE_APP_API_URL` environment variable.
 
 ### Compiles and minifies for production
 ```

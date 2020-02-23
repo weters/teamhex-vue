@@ -79,5 +79,9 @@ limitations under the License.
         display:               grid;
         grid-template-columns: 3fr minmax(200px, 1fr);
         grid-gap:              $spacing;
+
+        @media (max-width: $mobile-width) {
+            display: block;
+        }
     }
 </style>

@@ -43,14 +43,22 @@ limitations under the License.
         grid-template-columns: 1fr 1fr;
         grid-column-gap: $spacing;
         align-items: start;
+
+        @media (max-width: $mobile-width) {
+            display: block;
+        }
     }
 
     .th-search {
         margin-bottom: $spacing;
     }
 
-    .th-league-list {
-        border-left: 1px solid $border-color;
-        padding-left: $spacing;
+    @media (min-width: $mobile-width+1) {
+        .th-league-list {
+            border-left:  1px solid $border-color;
+            padding-left: $spacing;
+        }
     }
+
+
 </style>

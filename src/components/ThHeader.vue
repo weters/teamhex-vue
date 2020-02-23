@@ -48,19 +48,19 @@ limitations under the License.
     div.th-header {
         background-color: $primary;
         color:            white;
-        line-height:      100px;
-        height: 100px;
+        height:           100px;
+        position:         relative;
 
         img {
-            width: 167px;
-            height: 50px;
-            display: block;
+            width:     167px;
+            height:    50px;
+            display:   block;
             transform: translateY(25px);
         }
 
         nav {
             position: absolute;
-            top:      0;
+            bottom:   $spacing-small;
             right:    $spacing;
 
             ul {

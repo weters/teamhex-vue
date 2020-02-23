@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: teamhex-vue
+  labels:
+    app: teamhex-vue
+    type: frontend
+spec:
+  tls:
+    - hosts:
+        - teamhex.dev
+      secretName: tls-teamhex
+  rules:
+    - host: teamhex.dev
+      http:
+        paths:
+          - backend:
+              serviceName: teamhex-vue
+              servicePort: 80

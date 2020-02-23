@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: teamhex-vue
+  labels:
+    app: teamhex-vue
+    type: frontend
+spec:
+  selector:
+    app: teamhex-vue
+    type: frontend
+  ports:
+    - port: 80

@@ -20,6 +20,7 @@
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.13.1",
     "sass-loader": "^8.0.2",
+    "simple-color-converter": "^2.1.5",
     "vue-router": "^3.1.5",
     "vue-template-compiler": "^2.6.10"
   },
@@ -50,4 +51,3 @@
     "pre-commit": "./git-hooks/pre-commit"
   }
 }
-

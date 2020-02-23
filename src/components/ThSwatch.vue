@@ -5,7 +5,7 @@ Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-   http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,6 +23,7 @@ limitations under the License.
             <p class="name"><strong>{{ swatch.name }}</strong></p>
             <p class="hex"><a href="#" @click.prevent="copy">{{ hex }}</a></p>
             <p class="rgb"><a href="#" @click.prevent="copy">{{ rgb }}</a></p>
+            <p class="pantone"><a href="#" @click.prevent="copy">{{ pantone }}</a></p>
         </div>
     </div>
 </template>
@@ -30,6 +31,7 @@ limitations under the License.
 <script>
     import {toRGB} from "@/util";
     import bus from "@/bus";
+    import simpleColorConverter from 'simple-color-converter'
 
     export default {
         name: "ThSwatch",
@@ -45,6 +47,12 @@ limitations under the License.
             },
             rgb() {
                 return toRGB(this.swatch.hex)
+            },
+            pantone() {
+                return new simpleColorConverter({
+                    hex6: this.swatch.hex,
+                    to: 'pantone',
+                }).color
             }
         },
         methods: {
@@ -66,22 +74,23 @@ limitations under the License.
 
 <style lang="scss" scoped>
     @import '../variables';
+
     .th-swatch {
-        border: 1px solid $border-color;
+        border:        1px solid $border-color;
         border-radius: $border-radius;
-        padding: $spacing-small;
+        padding:       $spacing-small;
 
         .color-swatch {
-            border: 1px solid $border-color;
-            display: block;
-            width: 100%;
-            height: 60px;
-            padding: 2px;
+            border:        1px solid $border-color;
+            display:       block;
+            width:         100%;
+            height:        60px;
+            padding:       2px;
             border-radius: $border-radius;
 
             span {
-                width: 100%;
-                height: 100%;
+                width:   100%;
+                height:  100%;
                 display: block;
             }
         }

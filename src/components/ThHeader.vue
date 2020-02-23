@@ -5,7 +5,7 @@ Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-   http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
@@ -16,12 +16,21 @@ limitations under the License.
 
 <template>
     <div class="th-header">
-        <h1><router-link to="/">TeamHex</router-link></h1>
+        <router-link to="/">
+            <img src="../assets/Logo@2x.png" alt="TeamHex"
+                 srcset="../assets/Logo.png,
+                         ../assets/Logo@2x.png 2x,
+                         ../assets/Logo@3x.png 3x"/>
+        </router-link>
 
         <nav>
             <ul>
-                <li><router-link to="/">Home</router-link></li>
-                <li><router-link to="/about">About</router-link></li>
+                <li>
+                    <router-link to="/">Home</router-link>
+                </li>
+                <li>
+                    <router-link to="/about">About</router-link>
+                </li>
             </ul>
         </nav>
     </div>
@@ -35,31 +44,31 @@ limitations under the License.
 
 <style lang="scss" scoped>
     @import '../variables.scss';
+
     div.th-header {
         background-color: $primary;
-        color: white;
-        line-height: 100px;
+        color:            white;
+        line-height:      100px;
+        height: 100px;
 
-        h1 {
-            margin: 0;
-
-            a {
-                color: white;
-                text-decoration: none;
-            }
+        img {
+            width: 167px;
+            height: 50px;
+            display: block;
+            transform: translateY(25px);
         }
 
         nav {
             position: absolute;
-            top: 0;
-            right: $spacing;
+            top:      0;
+            right:    $spacing;
 
             ul {
                 list-style: none;
-                margin: 0;
+                margin:     0;
 
                 li {
-                    display: inline-block;
+                    display:     inline-block;
                     margin-left: $spacing-small;
 
                     &:first-child {
@@ -67,7 +76,7 @@ limitations under the License.
                     }
 
                     a {
-                        color: white;
+                        color:           white;
                         text-decoration: none;
 
                         &:hover {

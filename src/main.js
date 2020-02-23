@@ -27,16 +27,23 @@ Vue.use(VueRouter)
 Vue.config.productionTip = false
 
 const router = new VueRouter({
-  mode: 'history',
-  routes: [
-    { path: '/', component: ThHome },
-    { path: '/about', component: ThAbout },
-    { path: '/leagues/:league', component: ThLeague, props: true, },
-    { path: '/leagues/:league/:team', component: ThTeamOverview, props: true },
-  ]
+    mode: 'history',
+    routes: [
+        {path: '/', component: ThHome},
+        {path: '/about', component: ThAbout},
+        {path: '/leagues/:league', component: ThLeague, props: true,},
+        {path: '/leagues/:league/:team', component: ThTeamOverview, props: true},
+    ],
+    scrollBehavior(to, from, savedPosition) {
+        if (savedPosition) {
+            return savedPosition
+        } else {
+            return {x: 0, y: 0}
+        }
+    }
 })
 
 new Vue({
-  render: h => h(App),
-  router,
+    render: h => h(App),
+    router,
 }).$mount('#app')

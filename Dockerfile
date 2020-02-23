@@ -8,4 +8,5 @@ ENV VUE_APP_VERSION=$version
 RUN npm run build
 
 FROM nginx:latest
-COPY --from=build /build/dist /usr/share/nginx/html
+COPY --from=build /build/dist /app
+COPY nginx.conf /etc/nginx/nginx.conf

@@ -96,6 +96,7 @@ limitations under the License.
     .columns {
         display: grid;
         grid-template-columns: 3fr 1fr;
+        grid-gap: $spacing;
 
         @media (max-width: $mobile-width) {
             display: block;

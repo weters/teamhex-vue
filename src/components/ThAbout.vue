@@ -59,7 +59,7 @@ limitations under the License.
                     </tr>
                     <tr>
                         <th>Color Data</th>
-                        <td><a href="https://github.com/weters/teamhex/blob/master/teamhex.json">{{colorData}}</a></td>
+                        <td><a href="https://github.com/weters/teamhex/blob/master/configs/teamhex.json">{{colorData}}</a></td>
                     </tr>
                     </tbody>
                 </table>

@@ -20,14 +20,12 @@ limitations under the License.
 
         <div class="columns">
             <div>
-                <p><strong>Team Hex</strong> was created to provide an easy, programmatic way to obtain the hex and RGB
-                    colors used by professional and collegiate sports teams. There are couple other online sites that
-                    contain this information, but it's in a format that is easily consumed, or the information is out of
+                <p><strong>Team Hex</strong> was created to provide an easy, programmatic way to obtain color data used by professional and collegiate sports teams. There are couple other online sites that
+                    contain this information, but it's either not easily consumed, or the information is out of
                     date.</p>
 
                 <p>You can find the colors of your favorite sports teams either by using this fast, beautiful website,
-                    or
-                    you can access it programmatically using an intuitive <a href="https://petstore.swagger.io/?url=https://api.teamhex.dev/swagger.json">API</a>.
+                    or you can access it programmatically using an intuitive <a href="https://petstore.swagger.io/?url=https://api.teamhex.dev/swagger.json">API</a>.
                 </p>
 
                 <p>If you have some programming chops and would like to help out, this project is open-sourced under the

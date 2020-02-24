@@ -17,54 +17,22 @@ limitations under the License.
 <template>
     <div class="th-footer">
         <p>&copy; 2020 Tom Peters.</p>
-        <p class="version">
-            <span class="app-version">{{ version }}</span>
-            <span class="generation-date">{{ generationDate }}</span>
-        </p>
     </div>
 </template>
 
 <script>
-    import client from "@/models/client";
-
     export default {
         name: "ThFooter",
-        data() {
-            return {
-                generationDate: null,
-                version: process.env.VUE_APP_VERSION || 'v0.0.0',
-            }
-        },
-        mounted() {
-            client.getRoot()
-                .then(res => this.generationDate = new Date(res.generationDate).toLocaleDateString())
-        }
     }
 </script>
 
 <style lang="scss" scoped>
     @import "../variables";
     .th-footer {
-        color: $border-color;
         margin-top: 75px;
         font-size: 0.8em;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: $spacing;
-
-        .version {
-            text-align: right;
-        }
-
-        .app-version {
-            display: block;
-        }
-        .generation-date {
-            display: block;
-
-            &::before {
-                content: 'Last modified: '
-            }
-        }
     }
 </style>

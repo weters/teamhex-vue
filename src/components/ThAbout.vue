@@ -27,8 +27,7 @@ limitations under the License.
 
                 <p>You can find the colors of your favorite sports teams either by using this fast, beautiful website,
                     or
-                    you can access it programmatically using an intuitive <a href="https://api.teamhex.dev/">RESTful
-                        API</a>.
+                    you can access it programmatically using an intuitive <a href="https://petstore.swagger.io/?url=https://api.teamhex.dev/swagger.json">API</a>.
                 </p>
 
                 <p>If you have some programming chops and would like to help out, this project is open-sourced under the

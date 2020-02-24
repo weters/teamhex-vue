@@ -51,6 +51,10 @@ limitations under the License.
             league: {
                 type: String,
                 required: true,
+            },
+            setTitle: {
+                type: Boolean,
+                default: false,
             }
         },
         data() {
@@ -82,6 +86,10 @@ limitations under the License.
                     .then(divisions => {
                         this.divisions = divisions
                         this.name = divisions[0].teams[0].league
+
+                        if (this.setTitle) {
+                            document.title = `${this.name} - Team Hex`
+                        }
                     })
                     .catch(err => this.error = err)
             }

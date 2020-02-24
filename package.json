@@ -22,7 +22,8 @@
     "sass-loader": "^8.0.2",
     "simple-color-converter": "^2.1.5",
     "vue-router": "^3.1.5",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "vue-gtag": "^1.6.2"
   },
   "eslintConfig": {
     "root": true,

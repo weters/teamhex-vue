@@ -36,8 +36,8 @@ limitations under the License.
             }
         },
         mounted() {
-            client.getGenerationDate()
-                .then(gd => this.generationDate = new Date(gd).toLocaleDateString())
+            client.getRoot()
+                .then(res => this.generationDate = new Date(res.generationDate).toLocaleDateString())
         }
     }
 </script>

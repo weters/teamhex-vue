@@ -17,7 +17,7 @@ limitations under the License.
 <template>
     <div class="th-header">
         <router-link to="/">
-            <img src="../assets/Logo@2x.png" alt="TeamHex"
+            <img src="../assets/Logo@2x.png" alt="Team Hex"
                  srcset="../assets/Logo.png,
                          ../assets/Logo@2x.png 2x,
                          ../assets/Logo@3x.png 3x"/>

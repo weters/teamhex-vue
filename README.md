@@ -1,6 +1,6 @@
 # teamhex-vue
 
-This is the web front-end for [TeamHex](https://teamhex.dev/). This application requires the [TeamHex RESTful API](https://github.com/weters/teamhex).
+This is the web front-end for [Team Hex](https://teamhex.dev/). This application requires the [Team Hex RESTful API](https://github.com/weters/teamhex).
 
 ## Project setup
 ```

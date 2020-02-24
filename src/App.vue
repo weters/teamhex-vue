@@ -36,6 +36,14 @@ limitations under the License.
     export default {
         name: 'app',
         components: {ThBanner, ThFooter, ThHeader},
+        watch: {
+            '$route': {
+                handler(to) {
+                    document.title = to.meta.title || 'Team Hex - Find colors for your favorite sports teams'
+                },
+                immediate: true,
+            }
+        }
     }
 </script>
 

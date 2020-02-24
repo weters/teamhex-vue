@@ -58,10 +58,9 @@ class Client {
         return this._fetch(`/leagues/${encodeURIComponent(league)}/${encodeURIComponent(name)}`)
     }
 
-    getGenerationDate() {
+    getRoot() {
         return (
             this._fetch(`/`)
-                .then(res => res.generationDate)
         )
     }
 

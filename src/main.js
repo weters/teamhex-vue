@@ -21,6 +21,7 @@ import ThHome from "@/components/ThHome";
 import ThLeague from "@/components/ThLeague";
 import ThTeamOverview from "@/components/ThTeamOverview";
 import ThAbout from "@/components/ThAbout";
+import VueGtag from 'vue-gtag'
 
 Vue.use(VueRouter)
 
@@ -30,8 +31,18 @@ const router = new VueRouter({
     mode: 'history',
     routes: [
         {path: '/', component: ThHome},
-        {path: '/about', component: ThAbout},
-        {path: '/leagues/:league', component: ThLeague, props: true,},
+        {
+            path: '/about', component: ThAbout,
+            meta: {
+                title: 'About - Team Hex'
+            }
+        },
+        {
+            path: '/leagues/:league', component: ThLeague, props: route => ({
+                ...route.params,
+                setTitle: true,
+            })
+        },
         {path: '/leagues/:league/:team', component: ThTeamOverview, props: true},
     ],
     scrollBehavior(to, from, savedPosition) {
@@ -40,8 +51,16 @@ const router = new VueRouter({
         } else {
             return {x: 0, y: 0}
         }
-    }
+    },
 })
+
+if (process.env.NODE_ENV === 'production') {
+    Vue.use(VueGtag, {
+        config: {
+            id: 'UA-158972413-1'
+        },
+    }, router)
+}
 
 new Vue({
     render: h => h(App),

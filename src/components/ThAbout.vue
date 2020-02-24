@@ -84,7 +84,7 @@ limitations under the License.
             client.getRoot()
             .then(res => {
                 this.apiVersion = res.version
-                this.colorData = res.generationDate
+                this.colorData = new Date(res.generationDate).toLocaleDateString()
             })
             .catch(() => {}) // no-op
         }
@@ -96,6 +96,10 @@ limitations under the License.
     .columns {
         display: grid;
         grid-template-columns: 3fr 1fr;
+
+        @media (max-width: $mobile-width) {
+            display: block;
+        }
     }
     table {
         border-collapse: collapse;

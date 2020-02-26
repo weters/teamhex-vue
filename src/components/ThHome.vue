@@ -5,7 +5,7 @@ Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-   http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
@@ -17,32 +17,44 @@ limitations under the License.
 <template>
     <div class="th-home">
         <div>
-            <th-search class="th-search" />
+            <th-search class="th-search"/>
 
-            <p>Lookup the colors of your favorite sports team. Use the quick search above, or you can find teams listed by league.</p>
+            <p>Lookup the colors of your favorite sports team. Use the quick search above, or you can find teams
+                listed by league.</p>
 
+            <section class="api">
+                <h2>API Access</h2>
+
+                <p>Team Hex has a robust, <a href="https://petstore.swagger.io/?url=https://api.teamhex.dev/swagger.json">fully
+                    documented</a>, <a href="https://github.com/weters/teamhex">open-sourced</a>
+                    API for programmatically retrieving color data. Oh yeah, it's free to use too. This site was built using
+                    those APIs, so feel free to browse and use this site's <a href="https://github.com/weters/teamhex-vue">source
+                        code</a>.</p>
+            </section>
         </div>
-        <th-league-list class="th-league-list" />
+        <th-league-list class="th-league-list"/>
     </div>
 </template>
 
 <script>
-    import ThLeagueList from "@/components/ThLeagueList";
-    import ThSearch from "@/components/ThSearch";
+    import ThLeagueList from "@/components/ThLeagueList"
+    import ThSearch from "@/components/ThSearch"
 
     export default {
         name: "ThHome",
-        components: {ThSearch, ThLeagueList}
+        components: {ThSearch, ThLeagueList},
     }
 </script>
 
 <style lang="scss" scoped>
     @import '../variables.scss';
+
     .th-home {
-        display: grid;
+        display:               grid;
         grid-template-columns: 1fr 1fr;
-        grid-column-gap: $spacing;
-        align-items: start;
+        grid-column-gap:       $spacing;
+        align-items:           start;
+        margin-bottom:         $spacing;
 
         @media (max-width: $mobile-width) {
             display: block;
@@ -60,5 +72,11 @@ limitations under the License.
         }
     }
 
+    section {
+        margin-top: calc(2 * #{$spacing});
 
+        h2 {
+            font-size: 1.6em;
+        }
+    }
 </style>

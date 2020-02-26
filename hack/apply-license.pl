@@ -39,7 +39,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 EOF
 
-chomp( my @files = `find . \! -path '*/node_modules/*' \! -path '*/.git/*' -type f \\( -name '*.js' -o -name '*.css' -o -name '*.vue' \\)` );
+chomp( my @files = `find . \! -path '*/dist/*' \! -path '*/node_modules/*' \! -path '*/.git/*' -type f \\( -name '*.js' -o -name '*.css' -o -name '*.vue' \\)` );
 
 for my $file (@files) {
 	open my $fh, '<', $file

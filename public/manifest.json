@@ -1,6 +1,17 @@
 {
  "name": "Team Hex",
+ "short_name": "Team Hex",
+ "start_url": "/?source=pwa",
+ "display": "minimal-ui",
+ "background-color": "#F9F6F3",
+ "theme-color": "#24273A",
  "icons": [
+  {
+   "src": "\/icon-512x512.png",
+   "sizes": "512x512",
+   "type": "image\/png",
+   "density": "1.0"
+  },
   {
    "src": "\/android-icon-36x36.png",
    "sizes": "36x36",

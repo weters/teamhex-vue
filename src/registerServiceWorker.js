@@ -37,9 +37,9 @@ if (process.env.NODE_ENV === 'production') {
                             bus.$emit('refresh-needed', e.target)
                         }
                     })
+
+                    navigator.serviceWorker.addEventListener("controllerchange", () => window.location.reload())
                 })
             })
-
-        navigator.serviceWorker.addEventListener("controllerchange", () => window.location.reload())
     }
 }

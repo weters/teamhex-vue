@@ -5,7 +5,7 @@ Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-   http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
@@ -17,25 +17,26 @@ limitations under the License.
 <template>
     <div id="app">
         <header>
-            <th-header />
+            <th-header/>
         </header>
         <main>
-            <router-view />
+            <router-view/>
         </main>
         <footer>
-            <th-footer />
+            <th-footer/>
         </footer>
-        <th-banner />
-        <th-refresh-notification @refresh="refreshRequested" v-if="serviceWorker" />
+        <th-banner/>
+        <th-refresh-notification @refresh="refreshRequested" v-if="serviceWorker"/>
     </div>
 </template>
 
 <script>
-    import ThHeader from "@/components/ThHeader";
-    import ThFooter from "@/components/ThFooter";
-    import ThBanner from "@/components/ThBanner";
+    import ThHeader from "@/components/ThHeader"
+    import ThFooter from "@/components/ThFooter"
+    import ThBanner from "@/components/ThBanner"
     import bus from "@/bus"
     import ThRefreshNotification from "@/components/ThRefreshNotification"
+
     export default {
         name: 'app',
         components: {ThRefreshNotification, ThBanner, ThFooter, ThHeader},
@@ -50,7 +51,7 @@ limitations under the License.
                     document.title = to.meta.title || 'Team Hex - Find colors for your favorite sports teams'
                 },
                 immediate: true,
-            }
+            },
         },
         mounted() {
             bus.$on('refresh-needed', serviceWorker => this.serviceWorker = serviceWorker)
@@ -59,8 +60,8 @@ limitations under the License.
             refreshRequested() {
                 this.serviceWorker.postMessage('skipWaiting')
                 this.serviceWorker = null
-            }
-        }
+            },
+        },
     }
 </script>
 
@@ -77,9 +78,9 @@ limitations under the License.
 
     html, body {
         background-color: $light-color;
-        font-family: $font-body;
-        font-weight: 400;
-        color: #222;
+        font-family:      $font-body;
+        font-weight:      400;
+        color:            #222;
     }
 
     a {
@@ -96,11 +97,13 @@ limitations under the License.
 
     h1, h2, h3, h4, h5, h6 {
         font-family: $font-header;
-        font-style: italic;
+        font-style:  italic;
     }
 
     h2 { font-size: 2em; }
+
     h3 { font-size: 1.6em; }
+
     h4 { font-size: 1.2em; }
 
     ul, ol {
@@ -112,7 +115,7 @@ limitations under the License.
 
         @supports (padding: m#{a}x(0px)) {
             padding-right: m#{a}x($spacing, env(safe-area-inset-right, $spacing));
-            padding-left: m#{a}x($spacing, env(safe-area-inset-left, $spacing));
+            padding-left:  m#{a}x($spacing, env(safe-area-inset-left, $spacing));
         }
     }
 
@@ -121,11 +124,12 @@ limitations under the License.
     }
 
     button {
-        border-width: 0;
-        border-radius: $border-radius;
-        padding: $spacing-small calc(#{$spacing} * 2);
-        font-family: $font-body;
-        font-size: 1.1em;
+        background-color: white;
+        border-width:     0;
+        border-radius:    $border-radius;
+        padding:          $spacing-small calc(#{$spacing} * 2);
+        font-family:      $font-body;
+        font-size:        1.1em;
 
         &:active {
             box-shadow: inset 2px 5px 5px rgba(black, 0.4);

@@ -109,6 +109,11 @@ limitations under the License.
 
     header > *, main > *, footer > * {
         padding: 0 $spacing;
+
+        @supports (padding: m#{a}x(0px)) {
+            padding-right: m#{a}x($spacing, env(safe-area-inset-right, $spacing));
+            padding-left: m#{a}x($spacing, env(safe-area-inset-left, $spacing));
+        }
     }
 
     main {

@@ -16,7 +16,7 @@ limitations under the License.
 
 <template>
     <div class="th-footer">
-        <p>&copy; 2020 Tom Peters.</p>
+        <p>&copy; 2020 <a href="https://taproom.us/">Tom Peters</a></p>
     </div>
 </template>
 

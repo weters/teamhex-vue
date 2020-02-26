@@ -80,6 +80,7 @@ limitations under the License.
                         text-decoration: none;
 
                         &:hover {
+                            background-color: transparent;
                             text-decoration: underline;
                         }
                     }

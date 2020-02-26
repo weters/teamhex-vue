@@ -64,12 +64,15 @@ limitations under the License.
         },
         methods: {
             loadData() {
+                this.teamObj = null
                 client.getTeamByLeagueAndName(this.league, this.team)
                     .then(team => {
                         document.title = `${team.name} / ${team.league} - Team Hex`
                         this.teamObj = team
                     })
-                    .catch(err => this.error = err)
+                    .catch(err => {
+                        this.error = err
+                    })
             }
         }
     }

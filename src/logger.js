@@ -14,16 +14,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-const WorkboxWebpackPlugin = require('workbox-webpack-plugin')
-
-module.exports = {
-    configureWebpack: {
-        devtool: process.env.NODE_ENV === 'production' ? false : 'inline-source-map',
-        plugins: [
-            new WorkboxWebpackPlugin.InjectManifest({
-                swSrc: './src/sw.js',
-                maximumFileSizeToCacheInBytes: 1024 * 1024 * 5, // 5 MiB
-            })
-        ]
-    }
+const thLog = (...msg) => {
+   const styles = `background-color: #D95159; color: #fff; padding: 0 5px; border-radius: 3px;`
+   console.log("%cTHLOG ", styles, ...msg)
 }
+
+export default thLog

@@ -26,6 +26,7 @@ limitations under the License.
             <th-footer />
         </footer>
         <th-banner />
+        <th-refresh-notification @refresh="refreshRequested" v-if="serviceWorker" />
     </div>
 </template>
 
@@ -33,15 +34,31 @@ limitations under the License.
     import ThHeader from "@/components/ThHeader";
     import ThFooter from "@/components/ThFooter";
     import ThBanner from "@/components/ThBanner";
+    import bus from "@/bus"
+    import ThRefreshNotification from "@/components/ThRefreshNotification"
     export default {
         name: 'app',
-        components: {ThBanner, ThFooter, ThHeader},
+        components: {ThRefreshNotification, ThBanner, ThFooter, ThHeader},
+        data() {
+            return {
+                serviceWorker: null,
+            }
+        },
         watch: {
             '$route': {
                 handler(to) {
                     document.title = to.meta.title || 'Team Hex - Find colors for your favorite sports teams'
                 },
                 immediate: true,
+            }
+        },
+        mounted() {
+            bus.$on('refresh-needed', serviceWorker => this.serviceWorker = serviceWorker)
+        },
+        methods: {
+            refreshRequested() {
+                this.serviceWorker.postMessage('skipWaiting')
+                this.serviceWorker = null
             }
         }
     }
@@ -96,5 +113,17 @@ limitations under the License.
 
     main {
         padding: $spacing 0;
+    }
+
+    button {
+        border-width: 0;
+        border-radius: $border-radius;
+        padding: $spacing-small calc(#{$spacing} * 2);
+        font-family: $font-body;
+        font-size: 1.1em;
+
+        &:active {
+            box-shadow: inset 2px 5px 5px rgba(black, 0.4);
+        }
     }
 </style>

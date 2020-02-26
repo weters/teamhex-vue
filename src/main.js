@@ -22,6 +22,7 @@ import ThLeague from "@/components/ThLeague";
 import ThTeamOverview from "@/components/ThTeamOverview";
 import ThAbout from "@/components/ThAbout";
 import VueGtag from 'vue-gtag'
+import './registerServiceWorker'
 
 Vue.use(VueRouter)
 

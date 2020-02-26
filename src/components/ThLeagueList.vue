@@ -16,7 +16,7 @@ limitations under the License.
 
 <template>
     <div class="th-league-list">
-        <h2>Supported Leagues</h2>
+        <h2>Leagues</h2>
 
         <ul v-if="Array.isArray(leagues)">
             <li v-for="league in leagues" :key="league">

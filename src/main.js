@@ -23,6 +23,7 @@ import ThTeamOverview from "@/components/ThTeamOverview";
 import ThAbout from "@/components/ThAbout";
 import VueGtag from 'vue-gtag'
 import './registerServiceWorker'
+import ThLeagueList from "@/components/ThLeagueList"
 
 Vue.use(VueRouter)
 
@@ -36,6 +37,12 @@ const router = new VueRouter({
             path: '/about', component: ThAbout,
             meta: {
                 title: 'About - Team Hex'
+            }
+        },
+        {
+            path: '/leagues', component: ThLeagueList,
+            meta: {
+                title: 'Leagues - Team Hex',
             }
         },
         {

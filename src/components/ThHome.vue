@@ -21,18 +21,21 @@ limitations under the License.
 
             <p>Lookup the colors of your favorite sports team. Use the quick search above, or you can find teams
                 listed by league.</p>
-
-            <section class="api">
-                <h2>API Access</h2>
-
-                <p>Team Hex has a robust, <a href="https://petstore.swagger.io/?url=https://api.teamhex.dev/swagger.json">fully
-                    documented</a>, <a href="https://github.com/weters/teamhex">open-sourced</a>
-                    API for programmatically retrieving color data. Oh yeah, it's free to use too. This site was built using
-                    those APIs, so feel free to browse and use this site's <a href="https://github.com/weters/teamhex-vue">source
-                        code</a>.</p>
-            </section>
         </div>
         <th-league-list class="th-league-list"/>
+
+        <section class="api">
+            <h2>API Access</h2>
+
+            <p>Team Hex has a robust, <a
+                    href="https://petstore.swagger.io/?url=https://api.teamhex.dev/swagger.json">fully
+                documented</a>, <a href="https://github.com/weters/teamhex">open-sourced</a>
+                API for programmatically retrieving color data. Oh yeah, it's free to use too. This site was
+                built using
+                those APIs, so feel free to browse and use this site's <a
+                        href="https://github.com/weters/teamhex-vue">source
+                    code</a>.</p>
+        </section>
     </div>
 </template>
 
@@ -59,6 +62,16 @@ limitations under the License.
         @media (max-width: $mobile-width) {
             display: block;
         }
+
+        & > div:first-child {
+            grid-column-start: 1;
+            grid-row-start: 1;
+        }
+
+        .th-league-list {
+            grid-column-start: 2;
+            grid-row: 1 / span 2;
+        }
     }
 
     .th-search {
@@ -69,14 +82,6 @@ limitations under the License.
         .th-league-list {
             border-left:  1px solid $border-color;
             padding-left: $spacing;
-        }
-    }
-
-    section {
-        margin-top: calc(2 * #{$spacing});
-
-        h2 {
-            font-size: 1.6em;
         }
     }
 </style>

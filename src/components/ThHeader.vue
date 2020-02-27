@@ -29,6 +29,9 @@ limitations under the License.
                     <router-link to="/">Home</router-link>
                 </li>
                 <li>
+                    <router-link to="/leagues">Leagues</router-link>
+                </li>
+                <li>
                     <router-link to="/about">About</router-link>
                 </li>
             </ul>
@@ -45,6 +48,7 @@ limitations under the License.
 <style lang="scss" scoped>
     @import '../variables.scss';
 
+
     div.th-header {
         background-color: $primary;
         color:            white;
@@ -58,13 +62,35 @@ limitations under the License.
             transform: translateY(25px);
         }
 
+        @media (max-width: $mobile-width) {
+            height: auto;
+            & > a {
+                display: block;
+                padding: $spacing-small 0;
+            }
+
+            img {
+                transform: none;
+            }
+        }
+
         nav {
             position: absolute;
             bottom:   $spacing-small;
             right:    $spacing;
 
+            @media (max-width: $mobile-width) {
+                position: static;
+                bottom: auto;
+                right: auto;
+                text-align: center;
+
+                ul {
+                    padding-bottom: calc(#{$spacing-small}/2);
+                }
+            }
+
             ul {
-                list-style: none;
                 margin:     0;
 
                 li {

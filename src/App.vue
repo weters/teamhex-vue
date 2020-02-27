@@ -66,7 +66,7 @@ limitations under the License.
 </script>
 
 <style lang="scss">
-    @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100i|Trirong:400,700&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100i|Trirong:400,700|Roboto&display=swap');
     @import './variables';
 
     * {
@@ -80,7 +80,7 @@ limitations under the License.
         background-color: $light-color;
         font-family:      $font-body;
         font-weight:      400;
-        color:            #222;
+        color:            $text-color;
     }
 
     a {
@@ -124,15 +124,15 @@ limitations under the License.
     }
 
     button {
-        background-color: white;
-        border-width:     0;
+        background-color: $primary;
+        border: 1px solid rgba(black, 0.4);
         border-radius:    $border-radius;
-        padding:          $spacing-small calc(#{$spacing} * 2);
-        font-family:      $font-body;
-        font-size:        1.1em;
+        padding:          6px 12px;
+        font-family:      'Roboto', sans-serif;
+        font-size:        14px;
 
         &:active {
-            box-shadow: inset 2px 5px 5px rgba(black, 0.4);
+            background-color: darken($primary, 10%);
         }
     }
 </style>

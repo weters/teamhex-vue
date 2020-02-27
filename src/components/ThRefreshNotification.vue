@@ -34,23 +34,30 @@ limitations under the License.
     @import '../variables';
 
     .th-refresh-notification {
-        background-color:        rgba($primary, 0.8);
-        color:                   white;
+        background-color:        white;
+        border: 1px solid $border-color;
+        color: $text-color;
         position:                fixed;
-        bottom:                  0;
-        left:                    $spacing;
+        bottom: $spacing;
         right:                   $spacing;
         padding:                 $spacing;
         text-align:              center;
         border-top-left-radius:  $border-radius;
         border-top-right-radius: $border-radius;
+        min-width: 200px;
+        box-shadow: 0 0 4px rgba(black, 0.1), 2px 4px 4px rgba(black, 0.3);
+
+        button {
+            color: white;
+        }
     }
 
     .appear-enter-active {
-        transition: all 250ms;
+        transition: all 400ms;
     }
 
     .appear-enter {
-        transform: translateY(100%);
+        opacity: 0;
+        transform: translateX(100%);
     }
 </style>
